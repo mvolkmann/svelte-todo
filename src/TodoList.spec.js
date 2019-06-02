@@ -1,4 +1,5 @@
 import 'regenerator-runtime/runtime';
+import {tick} from 'svelte';
 import {cleanup, fireEvent, render, wait} from '@testing-library/svelte';
 
 import TodoList from './TodoList.svelte';
@@ -28,16 +29,20 @@ describe('TodoList', () => {
     //TODO: A new li is being added, but it doesn't contain this text!
 
     // Wait for input to be processed before clicking "Add" button.
-    await wait(() => {}, 100);
+    await tick();
+    expect(getByText(text));
+
+    /*
     const addBtn = getByText('Add');
     expect(addBtn);
     fireEvent.click(addBtn);
 
-    //lis = container.querySelectorAll('li');
-    //expect(lis.length).toBe(3);
+    lis = container.querySelectorAll('li');
+    expect(lis.length).toBe(3);
 
-    // await wait(() => {
-    //   expect(getByText(text)).toBeInTheDocument();
-    // });
+    await wait(() => {
+      expect(getByText(text)).toBeInTheDocument();
+    });
+    */
   });
 });
