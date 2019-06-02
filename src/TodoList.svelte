@@ -14,6 +14,7 @@
   $: uncompletedCount = todos.filter(t => !t.done).length;
 
   function addTodo() {
+    console.log('Todo.svelte addTodo: todoText =', todoText);
     todos = todos.concat(createTodo(todoText));
     todoText = '';
   }
