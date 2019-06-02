@@ -60,6 +60,7 @@
   <br />
   <form>
     <input
+      data-testid="todo-input"
       type="text"
       size="30"
       autofocus

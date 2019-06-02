@@ -1,7 +1,27 @@
 {
   "name": "svelte-app",
   "version": "1.0.0",
+  "scripts": {
+    "autobuild": "rollup -c -w",
+    "build": "rollup -c",
+    "dev": "run-p start:dev autobuild",
+    "start": "sirv public",
+    "start:dev": "sirv public --dev",
+    "test:e2e": "cypress open",
+    "test:unit": "jest src"
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.svelte$": "jest-transform-svelte"
+    },
+    "verbose": true
+  },
   "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "babel-jest": "^24.8.0",
+    "cypress": "^3.3.1",
+    "jest": "^24.8.0",
+    "jest-transform-svelte": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "rollup": "^1.10.1",
     "rollup-plugin-commonjs": "^9.3.4",
@@ -10,13 +30,7 @@
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.4.0",
-    "svelte": "^3.0.0"
-  },
-  "scripts": {
-    "build": "rollup -c",
-    "autobuild": "rollup -c -w",
-    "dev": "run-p start:dev autobuild",
-    "start": "sirv public",
-    "start:dev": "sirv public --dev"
+    "svelte": "^3.0.0",
+    "svelte-testing-library": "^1.6.0"
   }
 }
