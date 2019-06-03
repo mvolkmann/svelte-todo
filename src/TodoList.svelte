@@ -59,7 +59,7 @@
     <button on:click={archiveCompleted}>Archive Completed</button>
   </div>
   <br />
-  <form>
+  <form on:submit:preventDefault={() => {}}>
     <input
       data-testid="todo-input"
       type="text"

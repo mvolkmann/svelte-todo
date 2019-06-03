@@ -23,23 +23,23 @@ describe('TodoList', () => {
     const text = 'buy milk';
     //input.value;
     //fireEvent.change(input);
-    fireEvent.change(input, {target: {value: text}});
+    fireEvent.input(input, {target: {value: text}});
     console.log('TodoList.spec.js x: input.value =', input.value);
     //TODO: The input value is being changed correctly, but the Svelte bind:value is not updating the todoText variable!
     //TODO: A new li is being added, but it doesn't contain this text!
 
-    // Wait for input to be processed before clicking "Add" button.
-    await tick();
-    expect(getByText(text));
-
-    /*
     const addBtn = getByText('Add');
     expect(addBtn);
     fireEvent.click(addBtn);
 
+    // Wait for Add button click to be processed.
+    await tick();
+
+    //expect(getByText(text));
     lis = container.querySelectorAll('li');
     expect(lis.length).toBe(3);
 
+    /*
     await wait(() => {
       expect(getByText(text)).toBeInTheDocument();
     });

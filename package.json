@@ -8,8 +8,8 @@
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "start": "sirv public",
     "start:dev": "sirv public --dev",
-    "test:e2e": "cypress open",
-    "test:unit": "jest src"
+    "cypress": "cypress open",
+    "test": "jest src"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
