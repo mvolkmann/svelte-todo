@@ -1,43 +1,41 @@
-import {cleanup, fireEvent, render, tick, wait} from '@testing-library/svelte';
+import {cleanup, render} from '@testing-library/svelte';
 
 import Todo from './Todo.svelte';
 
 describe('Todo', () => {
+  const text = 'buy milk';
+  const todo = {text};
+
   beforeEach(cleanup);
 
   test('should render', () => {
-    const text = 'buy milk';
-    const todo = {text};
     const {getByText} = render(Todo, {props: {todo}});
-    expect(getByText(text));
+    const checkbox = document.querySelector('input[type="checkbox"]');
+    expect(checkbox).not.toBeNull();
+    expect(getByText(text)); // the todo text
+    expect(getByText('Delete')); // the button
   });
 
-  // test('should fire delete event', async () => {
-  //   const text = 'buy milk';
-  //   const todo = {text};
-  //   const result = render(Todo, {props: {todo}});
-  //   const {container, getByText} = result;
+  test('should fire delete event', async () => {
+    // There is no easy way to do this.
+    // It is covered by a test in TodoList.spec.js.
+    // The approach below does not work!
+    /*
+    const {container, getByText} = render(Todo, {props: {todo}});
 
-  //   let fired = false;
-  //   container.addEventListener('delete', () => {
-  //     console.log('Todo.spec.js got delete event');
-  //     fired = true;
-  //   });
-  //   fireEvent.click(getByText('Delete'));
-  //   await tick();
-  //   expect(fired).toBe(true);
-  //   // await wait(() => {
-  //   //   expect(fired).toBe(true);
-  //   // }, 500);
-  // });
+    let fired = false;
+    container.addEventListener('delete', () => {
+      console.log('Todo.spec.js got delete event');
+      fired = true;
+    });
+    fireEvent.click(getByText('Delete'));
+    await tick();
+    expect(fired).toBe(true);
+    */
+  });
 
   test('should fire todoToggle event', async () => {
-    const text = 'buy milk';
-    const todo = {text};
-    const {getByText} = render(Todo, {props: {todo}});
-
-    //TODO: Find checkbox, not Delete button.
-    //fireEvent.click(getByText('Delete'));
-    //TODO: Verify that a "todoToggle" event was fired!
+    // There is no easy way to do this.
+    // It is covered by a test in TodoList.spec.js.
   });
 });
