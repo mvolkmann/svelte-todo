@@ -12,16 +12,18 @@
 
   let uncompletedCount = 0;
   $: uncompletedCount = todos.filter(t => !t.done).length;
+  $: status = `${uncompletedCount} of ${todos.length} remaining`;
 
   function addTodo() {
-    console.log('Todo.svelte addTodo: todoText =', todoText);
     todos = todos.concat(createTodo(todoText));
     todoText = '';
   }
 
   const archiveCompleted = () => todos = todos.filter(t => !t.done);
 
-  const deleteTodo = todoId => todos = todos.filter(t => t.id !== todoId);
+  function deleteTodo(todoId) {
+    todos = todos.filter(t => t.id !== todoId);
+  }
 
   function toggleDone(todo) {
     const {id} = todo;
@@ -55,7 +57,7 @@
 <div>
   <h2>To Do List</h2>
   <div>
-    {uncompletedCount} of {todos.length} remaining
+    {status}
     <button on:click={archiveCompleted}>Archive Completed</button>
   </div>
   <br />

@@ -9,19 +9,16 @@
     "start": "sirv public",
     "start:dev": "sirv public --dev",
     "cypress": "cypress open",
-    "test": "jest src"
+    "test": "jest --verbose --watch src"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",
     "@babel/preset-env": "^7.4.5",
     "@testing-library/svelte": "^1.7.0",
-    "babel-core": "^6.26.3",
     "babel-jest": "^24.8.0",
-    "core-js": "^3.1.3",
     "jest": "^24.8.0",
     "jest-transform-svelte": "^2.0.0",
     "npm-run-all": "^4.1.5",
-    "regenerator-runtime": "^0.13.2",
     "rollup": "^1.10.1",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-livereload": "^1.0.0",
@@ -29,8 +26,7 @@
     "rollup-plugin-svelte": "^5.0.3",
     "rollup-plugin-terser": "^4.0.4",
     "sirv-cli": "^0.4.0",
-    "svelte": "^3.0.0",
-    "svelte-jest": "^0.2.0"
+    "svelte": "^3.0.0"
   },
   "dependencies": {}
 }
