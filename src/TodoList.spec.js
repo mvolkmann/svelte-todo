@@ -1,12 +1,11 @@
-import 'regenerator-runtime/runtime';
 import {tick} from 'svelte';
 import {
   cleanup,
   fireEvent,
   render,
-  queryByText,
-  wait,
-  waitForElementToBeRemoved
+  //queryByText,
+  wait
+  //waitForElementToBeRemoved
 } from '@testing-library/svelte';
 
 import TodoList from './TodoList.svelte';
