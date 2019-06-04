@@ -21,9 +21,7 @@
 
   const archiveCompleted = () => todos = todos.filter(t => !t.done);
 
-  function deleteTodo(todoId) {
-    todos = todos.filter(t => t.id !== todoId);
-  }
+  const deleteTodo = todoId => todos = todos.filter(t => t.id !== todoId);
 
   function toggleDone(todo) {
     const {id} = todo;

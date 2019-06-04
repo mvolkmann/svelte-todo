@@ -16,7 +16,7 @@ describe('Todo', () => {
     expect(getByText('Delete')); // the button
   });
 
-  test('should fire delete event', async () => {
+  test('should fire delete event', () => {
     // There is no easy way to do this.
     // It is covered by a test in TodoList.spec.js.
     // The approach below does not work!
@@ -34,7 +34,7 @@ describe('Todo', () => {
     */
   });
 
-  test('should fire todoToggle event', async () => {
+  test('should fire todoToggle event', () => {
     // There is no easy way to do this.
     // It is covered by a test in TodoList.spec.js.
   });

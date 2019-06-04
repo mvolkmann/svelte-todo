@@ -10,6 +10,7 @@ describe('TodoList', () => {
 
   function expectTodoCount(count) {
     return wait(() => {
+      // Each todo has an <li> root element.
       const lis = document.querySelectorAll('li');
       expect(lis.length).toBe(count);
     });

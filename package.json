@@ -9,7 +9,7 @@
     "start": "sirv public",
     "start:dev": "sirv public --dev",
     "cypress": "cypress open",
-    "test": "jest --verbose --watch src"
+    "test": "jest --watch src"
   },
   "devDependencies": {
     "@babel/core": "^7.4.5",

@@ -5,5 +5,5 @@ module.exports = {
   },
   moduleFileExtensions: ['js', 'svelte'],
   bail: false,
-  verbose: false
+  verbose: true
 };
