@@ -8,7 +8,8 @@
     "reinstall": "rm -rf node_modules package-lock.json && npm install",
     "start": "sirv public",
     "start:dev": "sirv public --dev",
-    "cypress": "cypress open",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
     "test": "jest --watch src"
   },
   "devDependencies": {
