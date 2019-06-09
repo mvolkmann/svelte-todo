@@ -1,5 +1,3 @@
-import {exportAllDeclaration} from '@babel/types';
-
 const baseUrl = 'http://localhost:5000/';
 
 describe('Todo app', () => {
