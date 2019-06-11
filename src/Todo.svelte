@@ -10,8 +10,9 @@
     color: gray;
     text-decoration: line-through;
   }
-  .foo {
-    color: red;
+
+  li {
+    margin-top: 5px;
   }
 </style>
 

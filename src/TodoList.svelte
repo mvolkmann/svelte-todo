@@ -30,17 +30,8 @@
 </script>
 
 <style>
-  body {
-    font-family: sans-serif;
-    padding-left: 10px;
-  }
-
   button {
     margin-left: 10px;
-  }
-
-  li {
-    margin-top: 5px;
   }
 
   ul.unstyled {
