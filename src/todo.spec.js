@@ -1,4 +1,3 @@
-/* global beforeEach, describe, expect, test */
 import {cleanup, render} from '@testing-library/svelte';
 
 import Todo from './Todo.svelte';

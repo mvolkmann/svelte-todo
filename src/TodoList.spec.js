@@ -1,4 +1,3 @@
-/* global beforeEach, describe, expect, test */
 import {tick} from 'svelte';
 import {cleanup, fireEvent, render, wait} from '@testing-library/svelte';
 
