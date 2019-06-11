@@ -19,15 +19,13 @@
     todoText = '';
   }
 
-  const archiveCompleted = () => todos = todos.filter(t => !t.done);
+  const archiveCompleted = () => (todos = todos.filter(t => !t.done));
 
-  const deleteTodo = todoId => todos = todos.filter(t => t.id !== todoId);
+  const deleteTodo = todoId => (todos = todos.filter(t => t.id !== todoId));
 
   function toggleDone(todo) {
     const {id} = todo;
-    todos = todos.map(t =>
-      t.id === id ? {...t, done: !t.done} : t
-    );
+    todos = todos.map(t => (t.id === id ? {...t, done: !t.done} : t));
   }
 </script>
 
@@ -66,19 +64,15 @@
       size="30"
       autofocus
       placeholder="enter new todo here"
-      bind:value={todoText}
-    />
-    <button disabled={!todoText} on:click={addTodo}>
-      Add
-    </button>
+      bind:value={todoText} />
+    <button disabled={!todoText} on:click={addTodo}>Add</button>
   </form>
   <ul class="unstyled">
     {#each todos as todo}
       <Todo
-        todo={todo}
+        {todo}
         on:delete={() => deleteTodo(todo.id)}
-        on:toggleDone={() => toggleDone(todo)}
-      />
+        on:toggleDone={() => toggleDone(todo)} />
     {/each}
   </ul>
 </div>
