@@ -18,8 +18,8 @@ describe('Todo app', () => {
     cy.get('@addBtn').should('not.be.disabled');
     cy.get('@addBtn').click();
 
-    cy.get('@addBtn').should('be.disabled');
     cy.get('@todoInput').should('have.value', '');
+    cy.get('@addBtn').should('be.disabled');
     cy.contains(todoText);
     cy.contains('2 of 3 remaining');
   });

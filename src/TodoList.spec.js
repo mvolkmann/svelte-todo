@@ -6,7 +6,7 @@ import TodoList from './TodoList.svelte';
 describe('TodoList', () => {
   const PREDEFINED_TODOS = 2;
 
-  beforeEach(cleanup);
+  afterEach(cleanup);
 
   function expectTodoCount(count) {
     return wait(() => {

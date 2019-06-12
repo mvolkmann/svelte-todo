@@ -6,7 +6,7 @@ describe('Todo', () => {
   const text = 'buy milk';
   const todo = {text};
 
-  beforeEach(cleanup);
+  afterEach(cleanup);
 
   test('should render', () => {
     const {getByText} = render(Todo, {props: {todo}});
