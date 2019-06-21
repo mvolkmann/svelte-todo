@@ -1,4 +1,5 @@
 <script>
+  import ShippingLabel from './ShippingLabel.svelte';
   import Todo from './Todo.svelte';
 
   let lastId = 0;
@@ -42,6 +43,12 @@
 </style>
 
 <div>
+  <ShippingLabel>
+    Mark Volkmann<br />
+    123 Some Street<br />
+    Somewhere, Some State 12345
+  </ShippingLabel>
+  <ShippingLabel />
   <h2>To Do List</h2>
   <div>
     {status}

@@ -4,7 +4,7 @@ describe('Todo app', () => {
   it('should add todo', () => {
     cy.visit(baseUrl);
     cy.contains('1 of 2 remaining');
-    // The "Add" button should be disabled until text is entered.
+    // "Add" button should be disabled until text is entered.
     cy.contains('Add')
       .as('addBtn')
       .should('be.disabled');
@@ -18,7 +18,7 @@ describe('Todo app', () => {
     cy.get('@addBtn').should('not.be.disabled');
     cy.get('@addBtn').click();
 
-    cy.get('@todoInput').should('have.value', '');
+    cy.get('@todoInput').should('have.value', ''); // cleared
     cy.get('@addBtn').should('be.disabled');
     cy.contains(todoText);
     cy.contains('2 of 3 remaining');
@@ -28,14 +28,14 @@ describe('Todo app', () => {
     cy.visit(baseUrl);
     cy.contains('1 of 2 remaining');
 
-    // Find the first checkbox and toggle it.
+    // Find first checkbox and toggle it.
     cy.get('input[type=checkbox]')
       .first()
       .as('cb1')
       .click();
     cy.contains('2 of 2 remaining');
 
-    // Toggle the same checkbox again.
+    // Toggle same checkbox again.
     cy.get('@cb1').check();
     cy.contains('1 of 2 remaining');
   });
@@ -47,7 +47,7 @@ describe('Todo app', () => {
     const todoText = 'learn Svelte'; // first todo
     cy.contains('ul', todoText);
 
-    // Click the first "Delete" button.
+    // Click first "Delete" button.
     cy.contains('Delete').click();
     cy.contains('ul', todoText).should('not.exist');
     cy.contains('1 of 1 remaining');
@@ -59,7 +59,7 @@ describe('Todo app', () => {
     const todoText = 'learn Svelte'; // first todo
     cy.contains('ul', todoText);
 
-    // Click the "Archive Completed" button.
+    // Click "Archive Completed" button.
     cy.contains('Archive Completed').click();
     cy.contains('ul', todoText).should('not.exist');
     cy.contains('1 of 1 remaining');
