@@ -11,7 +11,7 @@
     createTodo('build a Svelte app')
   ];
 
-  let uncompletedCount = 0;
+  //let uncompletedCount = 0;
   $: uncompletedCount = todos.filter(t => !t.done).length;
   $: status = `${uncompletedCount} of ${todos.length} remaining`;
 
