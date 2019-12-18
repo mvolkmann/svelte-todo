@@ -2,19 +2,25 @@
   "env": {
     "browser": true,
     "es6": true,
-    "jest": true
+    "jest": true,
+    "node": true
   },
   "extends": ["eslint:recommended", "plugin:import/recommended"],
   "globals": {
     "cy": "readonly"
   },
+  "overrides": [
+    {
+      "files": ["**/*.svelte"],
+      "processor": "svelte3/svelte3"
+    }
+  ],
   "parserOptions": {
     "ecmaVersion": 2019,
     "sourceType": "module"
   },
-  "plugins": ["svelte3"],
+  "plugins": ["import", "svelte3"],
   "rules": {
-    "no-console": "off",
-    "svelte3/lint-template": true
+    "no-console": "off"
   }
 }
