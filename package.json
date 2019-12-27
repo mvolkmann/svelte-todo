@@ -12,7 +12,8 @@
     "start:dev": "sirv public --dev",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test": "jest --watch src"
+    "test": "jest src",
+    "test:watch": "npm test -- --watch"
   },
   "devDependencies": {
     "@babel/core": "^7.7.4",
@@ -36,6 +37,7 @@
     "rollup-plugin-svelte": "^5.1.1",
     "rollup-plugin-terser": "^5.1.2",
     "sirv-cli": "^0.4.5",
-    "svelte": "^3.15.0"
+    "svelte": "^3.15.0",
+    "svelte-jester": "^1.0.3"
   }
 }

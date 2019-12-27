@@ -1,9 +1,9 @@
 module.exports = {
+  bail: false,
+  moduleFileExtensions: ['js', 'svelte'],
   transform: {
     '^.+\\.js$': 'babel-jest',
-    '^.+\\.svelte$': 'jest-transform-svelte'
+    '^.+\\.svelte$': 'svelte-jester'
   },
-  moduleFileExtensions: ['js', 'svelte'],
-  bail: false,
   verbose: true
 };

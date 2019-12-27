@@ -2,3 +2,4 @@
 /cypress/videos
 /node_modules
 /public/bundle.*
+.*.swp
