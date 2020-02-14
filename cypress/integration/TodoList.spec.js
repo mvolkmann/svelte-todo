@@ -15,8 +15,9 @@ describe('Todo app', () => {
       .as('todoInput')
       .type(todoText);
 
-    cy.get('@addBtn').should('not.be.disabled');
-    cy.get('@addBtn').click();
+    const addBtn = cy.get('@addBtn');
+    addBtn.should('not.be.disabled');
+    addBtn.click();
 
     cy.get('@todoInput').should('have.value', ''); // cleared
     cy.get('@addBtn').should('be.disabled');
