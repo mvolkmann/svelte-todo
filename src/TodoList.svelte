@@ -49,7 +49,6 @@
     Somewhere, Some State 12345
   </ShippingLabel>
   <ShippingLabel /-->
-
   <h2>To Do List</h2>
   <div>
     {status}
