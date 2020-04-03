@@ -20,9 +20,13 @@
     todoText = '';
   }
 
-  const archiveCompleted = () => (todos = todos.filter(t => !t.done));
+  function archiveCompleted() {
+    todos = todos.filter(t => !t.done);
+  }
 
-  const deleteTodo = todoId => (todos = todos.filter(t => t.id !== todoId));
+  function deleteTodo(todoId) {
+    todos = todos.filter(t => t.id !== todoId);
+  }
 
   function toggleDone(todo) {
     const {id} = todo;
@@ -60,7 +64,6 @@
       data-testid="todo-input"
       type="text"
       size="30"
-      autofocus
       placeholder="enter new todo here"
       bind:value={todoText} />
     <button disabled={!todoText} on:click={addTodo}>Add</button>

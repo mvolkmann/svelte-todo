@@ -3,3 +3,6 @@
 /node_modules
 /public/bundle.*
 .*.swp
+
+# Local Netlify folder
+.netlify
