@@ -1,4 +1,3 @@
-import {tick} from 'svelte';
 import {cleanup, fireEvent, render, waitFor} from '@testing-library/svelte';
 
 import TodoList from './TodoList.svelte';
@@ -57,12 +56,10 @@ describe('TodoList', () => {
     const {container, getByText} = render(TodoList);
     const checkboxes = container.querySelectorAll('input[type="checkbox"]');
 
-    fireEvent.click(checkboxes[1]); // second todo
-    await tick();
+    await fireEvent.click(checkboxes[1]); // second todo
     expect(getByText('0 of 2 remaining'));
 
-    fireEvent.click(checkboxes[0]); // first todo
-    await tick();
+    await fireEvent.click(checkboxes[0]); // first todo
     expect(getByText('1 of 2 remaining'));
   });
 });
